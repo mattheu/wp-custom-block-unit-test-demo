@@ -1,0 +1,15 @@
+{
+    "name": "matthew/hm-testing-gb-blocks-demo",
+    "description": "Demonstration of writing unit tests for Gutenberg",
+    "authors": [
+        {
+            "name": "Matthew Haines-Young",
+            "email": "matthewhainesyoung@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "humanmade/coding-standards": "^0.7.0"
+    }
+}
