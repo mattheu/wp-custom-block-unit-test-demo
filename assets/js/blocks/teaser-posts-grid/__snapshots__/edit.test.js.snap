@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teaser Posts Grid Block Edit Component snapshot renders with defaults 1`] = `
+<div>
+  <h2>
+    Select some posts
+  </h2>
+  <ul />
+  <button />
+</div>
+`;

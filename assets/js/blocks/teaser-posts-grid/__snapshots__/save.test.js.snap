@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teaser Posts Grid Block Save Component snapshot renders with defaults 1`] = `<ul />`;
+
+exports[`Teaser Posts Grid Block Save Component snapshot renders with multiple items 1`] = `<ul />`;
