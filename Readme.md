@@ -4,7 +4,7 @@ On a recent project, I wrote a lot of custom functionality for the WordPress blo
 
 ## Setup.
 
-This is intended to be set up as a WordPress plugin. You can clone it into a local installation plugins directory, and run the following commands.
+This is intended to be set up as a WordPress plugin. You can clone it into a local installation plugins directory, and install as normal. Before using you should run the following commands:
 
 ```
 composer install;
@@ -12,18 +12,23 @@ npm install;
 npm run build;
 ```
 
-Then activate the plugin as normal. 
-
 In order to run the tests you can use the following commands.
 
 ```
 # Just run the JavaScript tests.
 npm run test:js
-# Just Jest in watch mode, so tests automatically run whenever you change a file.
+# Run Jest in watch mode, so tests automatically run whenever you change a file.
 npm run test:js:start
 ```
 
-## Tools
+Other commands available:
+
+```
+# Lint code using the Human Made coding Standards.
+npm run lint 
+```
+
+## Tools Used
 
 ### Testing JavaScript with Jest
 
