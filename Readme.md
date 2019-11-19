@@ -22,7 +22,7 @@ Sometimes you need to set some global variables within the test environment. In 
 
 ### Mocking Dependencies from WP Core.
 
-I’m using `webpack-helpers`, which has all `@wordpress/*` packages configured as externals. This allows us to do things like `import { Button } from '@wordpress/components'`, which maps to the global `wp.components.Button`. 
+For this demo, I’m using [Human Made Webpack Helpers](https://github.com/humanmade/webpack-helpers), which has all `@wordpress/*` packages configured as Webpack externals. This allows us to write `import { Button } from '@wordpress/components'`, which maps to the global `wp.components.Button`. 
 
 Because these dependencies are not actually available in the testing environment, the tests don’t run. We could install them so they are available to the tests, but it’s important to remember that we’re not actually trying to test these dependencies, and trying to configure them correctly could potentially add a huge amount of complexity. Instead, we should mock the things we use. Jest supports mocking dependencies by adding files to the `__mocks__` directory, which get picked up automatically. But our WordPress dependencies are not really available, they’re intended to be externals that map to globals and Jest isn’t aware of this. A solution is to manually configure Jest to check here for all `@wordpress/*` imports. See the `moduleNameMapper` in the jest config.
 
