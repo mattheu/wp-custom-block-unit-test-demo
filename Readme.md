@@ -2,6 +2,27 @@
 
 On a recent project, I wrote a lot of custom functionality for the WordPress block editor, and I was keen to write tests for this. There were a few things I had to solve along the way, so I wanted to try and distill some of what I have learnt whilst doing this into a small demo plugin to show how you can write tests for a custom block or plugins. This is by no means a definitive guide and I’m certainly open to input from the whole team on the best way to do things!
 
+## Setup.
+
+This is intended to be set up as a WordPress plugin. You can clone it into a local installation plugins directory, and run the following commands.
+
+```
+composer install;
+npm install;
+npm run build;
+```
+
+Then activate the plugin as normal. 
+
+In order to run the tests you can use the following commands.
+
+```
+# Just run the JavaScript tests.
+npm run test:js
+# Just Jest in watch mode, so tests automatically run whenever you change a file.
+npm run test:js:start
+```
+
 ## Tools
 
 ### Testing JavaScript with Jest
