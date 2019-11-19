@@ -12,7 +12,7 @@ The Jest docs describe it as “delightfully simple" and I would mostly agree wi
 
 ### Testing React with React Test Renderer
 
-There are a few libraries that can be used alongside Jest that enable you to test your React code. They typically involve rendering the component using some given props, in a way that lets you interact with it and run assertions against it using Jest. You may have seen [React Test Renderer](https://reactjs.org/docs/test-renderer.html), [Enzyme](https://airbnb.io/enzyme/) in use. They seem pretty similar to me and I have no strong opinions either way. RTR is perhaps simpler, but Enzyme has more functionality. For the purposes of this document I will be using react-test-renderer. 
+There are a few libraries that can be used alongside Jest that enable you to test your React code. They typically involve rendering the component using some given props, in a way that lets you interact with it and run assertions against it using Jest. You may have seen [React Test Renderer](https://reactjs.org/docs/test-renderer.html) or [Enzyme](https://airbnb.io/enzyme/) in use. They seem pretty similar to me and I have no strong opinions either way. For the purposes of this demo I will be using react-test-renderer. 
 
 ## Setting Jest up to work with WordPress
 
