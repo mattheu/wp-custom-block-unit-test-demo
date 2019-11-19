@@ -1,21 +1,26 @@
 # Writing Tests for WordPress Custom Blocks.
 
-On Siemens we have been writing a lot of custom functionality for the WordPress block editor, and I’ve been keen to write tests for this. I wanted to try and distill some of what we have done into a small demo plugin to show how you can also write tests for your custom blocks or plugins. This is by no means a definitive guide and I’m certainly open to input from the whole team on the best way to do things!
+On a recent project, I wrote a lot of custom functionality for the WordPress block editor, and I was keen to write tests for this. There were a few things I had to solve along the way, so I wanted to try and distill some of what I have learnt whilst doing this into a small demo plugin to show how you can write tests for a custom block or plugins. This is by no means a definitive guide and I’m certainly open to input from the whole team on the best way to do things!
 
-## Testing JavaScript with Jest
+## Tools
 
-We’ll be working with Jest which is a JavaScript testing framework, and has become something of a standard in the JS and React world. It handles actually running the tests, making assertions and mocking. 
+### Testing JavaScript with Jest
+
+We’ll be working with [Jest](https://jestjs.io/) which is a JavaScript testing framework, and has become something of a standard in the JS and React world. It handles actually running the tests, making assertions and mocking. 
 
 The Jest docs describe it as “delightfully simple" and I would mostly agree with this when dealing with simple JS. I won’t cover the basics here - and would advise you to look at their docs if you’re unfamiliar with it.  However, as simple as Jest is, once you factor in other dependencies, such as React, or WordPress, things start getting a little more complex.
 
-## Testing React.
+### Testing React with React Test Renderer
 
-There are a few libraries that can be used alongside Jest that enable you to test your React code. They typically involve rendering the component using some given props, in a way that lets you interact with it and run assertions against it using Jest. You may have seen react-test-renderer, enzyme or react testing library in use. They all seem pretty similar to me and I have no strong opinions either way, but for the purposes of this document I will be using react-test-renderer. 
-Setting Jest up to work with WordPress
-Setting up Global variables.
+There are a few libraries that can be used alongside Jest that enable you to test your React code. They typically involve rendering the component using some given props, in a way that lets you interact with it and run assertions against it using Jest. You may have seen [React Test Renderer](https://reactjs.org/docs/test-renderer.html), [Enzyme](https://airbnb.io/enzyme/) in use. They seem pretty similar to me and I have no strong opinions either way. RTR is perhaps simpler, but Enzyme has more functionality. For the purposes of this document I will be using react-test-renderer. 
+
+## Setting Jest up to work with WordPress
+
+### Setting up Global variables.
+
 Sometimes you need to set some global variables within the test environment. In my case I just needed to make sure that `wp.element.createElement` was available. I created a `jest.config.js file` in the project root, and added a setupFile, in which I can make sure any global variables are set or mocked as needed. I just made this an alias to `React.createElement`.
 
-## Mocking Dependencies from WP Core.
+### Mocking Dependencies from WP Core.
 
 I’m using `webpack-helpers`, which has all `@wordpress/*` packages configured as externals. This allows us to do things like `import { Button } from '@wordpress/components'`, which maps to the global `wp.components.Button`. 
 
