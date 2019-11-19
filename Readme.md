@@ -48,7 +48,7 @@ To get started, I’ve just written some really simple snapshot tests. They’re
 
 To demonstrate some of the potential of testing React components using Jest and `react-test-renderer`, I have added some additional tests to the Edit component. These find specific elements by class name in the rendered test instance, and call function props such as `onChange` and `onClick`, and verify that doing so is calling our mocked instance of `setAttributes`. This is really powerful, but it can be a little brittle and break if you make changes to the component, e.g. changing the class name.
 
-### Testing Data Store
+### Testing Code that uses the WordPress Block Editor Data Store
 
 We often have code that makes use of the core data store. How on earth do we test this? It would be really hard for us to set up a functional version of the Block Editor data store to interact with.
 
