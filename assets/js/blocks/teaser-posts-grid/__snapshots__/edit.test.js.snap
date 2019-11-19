@@ -1,11 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Teaser Posts Grid Block Edit Component snapshot renders with defaults 1`] = `
+exports[`Teaser Posts Grid Block Edit Component renders with defaults 1`] = `
 <div>
   <h2>
     Select some posts
   </h2>
   <ul />
-  <button />
+  <button
+    className="btn-add-new"
+    isDefault={true}
+    onClick={[Function]}
+  >
+    Add new
+  </button>
 </div>
+`;
+
+exports[`Teaser Posts Grid Block Edit Component renders with multiple items 1`] = `
+<div>
+  <h2>
+    Select some posts
+  </h2>
+  <ul>
+    <li>
+      <label>
+        Post ID.
+        <input
+          onChange={[Function]}
+          type="number"
+          value={13}
+        />
+        <button
+          className="btn-remove-item"
+          isDefault={true}
+          isSmall={true}
+          onClick={[Function]}
+        >
+          Remove item
+        </button>
+      </label>
+    </li>
+    <li>
+      <label>
+        Post ID.
+        <input
+          onChange={[Function]}
+          type="number"
+          value={42}
+        />
+        <button
+          className="btn-remove-item"
+          isDefault={true}
+          isSmall={true}
+          onClick={[Function]}
+        >
+          Remove item
+        </button>
+      </label>
+    </li>
+  </ul>
+  <button
+    className="btn-add-new"
+    isDefault={true}
+    onClick={[Function]}
+  >
+    Add new
+  </button>
+</div>
+`;
+
+exports[`Teaser Posts Grid Block Edit Component renders with multiple items 2`] = `
+Array [
+  Object {
+    "items": Array [
+      Object {
+        "id": 56,
+      },
+      Object {
+        "id": 42,
+      },
+    ],
+  },
+]
 `;

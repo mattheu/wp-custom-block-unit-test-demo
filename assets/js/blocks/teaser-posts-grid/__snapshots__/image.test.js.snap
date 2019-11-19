@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teaser Posts Grid Block Image Component renders full size image when requested size not found. 1`] = `
+<img
+  alt="Test Alt Text"
+  height={300}
+  src="http://example.com/cat.jpg"
+  width={400}
+/>
+`;
+
+exports[`Teaser Posts Grid Block Image Component renders image thumbnail. 1`] = `
+<img
+  alt="Test Alt Text"
+  height={100}
+  src="http://example.com/cat-thumbnail.jpg"
+  width={100}
+/>
+`;
+
+exports[`Teaser Posts Grid Block Image Component renders loading when image is not found in store. 1`] = `
+<span
+  className="loading"
+/>
+`;

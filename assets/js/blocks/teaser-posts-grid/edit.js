@@ -1,6 +1,7 @@
 import React from 'react';
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
+import { updateItem, deleteItem, appendItem } from './utils';
 
 function Edit( {
 	attributes: {
@@ -14,35 +15,22 @@ function Edit( {
 
 			<ul>
 				{ items.map( ( item, index ) => (
-					<li>
+					<li key={ index }>
 						<label>
 							Post ID.
 							<input
 								type="number"
 								value={ item.id }
 								onChange={ e => {
-									setAttributes( {
-										items: [
-											...items.slice( 0, index ),
-											{
-												id: parseInt( e.target.value, 10 ),
-											},
-											...items.slice( index + 1, items.length ),
-										],
-									} );
+									const newItem = { id: parseInt( e.target.value, 10 ) };
+									setAttributes( { items: updateItem( items, newItem, index ) } );
 								} }
 							/>
 							<Button
 								isSmall
 								isDefault
-								onClick={ () => {
-									setAttributes( {
-										items: [
-											...items.slice( 0, index ),
-											...items.slice( index + 1, items.length ),
-										],
-									} );
-								} }
+								className="btn-remove-item"
+								onClick={ () => setAttributes( { items: deleteItem( items, index ) } ) }
 							>
 								{ __( 'Remove item', 'hm-gbtd' ) }
 							</Button>
@@ -53,14 +41,8 @@ function Edit( {
 
 			<Button
 				isDefault
-				onClick={ () => {
-					setAttributes( {
-						items: [
-							...items,
-							{ id: null },
-						],
-					} );
-				} }
+				className="btn-add-new"
+				onClick={ () => setAttributes( { items: appendItem( items, { id: null } ) } ) }
 			>
 				{ __( 'Add new', 'hm-gbtd' ) }
 			</Button>

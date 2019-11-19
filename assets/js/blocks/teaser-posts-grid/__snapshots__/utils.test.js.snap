@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teaser Posts Grid Block Utility Functions Append item. 1`] = `
+Array [
+  Object {
+    "id": 2,
+  },
+  Object {
+    "id": 3,
+  },
+  Object {
+    "id": 4,
+  },
+  Object {
+    "id": 6,
+  },
+]
+`;
+
+exports[`Teaser Posts Grid Block Utility Functions Delete item. 1`] = `
+Array [
+  Object {
+    "id": 2,
+  },
+  Object {
+    "id": 3,
+  },
+]
+`;
+
+exports[`Teaser Posts Grid Block Utility Functions Update item but don't overwrite. 1`] = `
+Array [
+  Object {
+    "id": 2,
+  },
+  Object {
+    "foo": "bar",
+    "id": 3,
+  },
+  Object {
+    "id": 4,
+  },
+]
+`;
+
+exports[`Teaser Posts Grid Block Utility Functions Update item. 1`] = `
+Array [
+  Object {
+    "id": 2,
+  },
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 4,
+  },
+]
+`;

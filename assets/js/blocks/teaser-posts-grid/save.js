@@ -7,8 +7,8 @@ function Save( {
 } ) {
 	return (
 		<ul>
-			{ items.map( item => (
-				<li>
+			{ items.map( ( item, index ) => (
+				<li key={ index }>
 					<h2>Post { item.id }</h2>
 				</li>
 			) ) }

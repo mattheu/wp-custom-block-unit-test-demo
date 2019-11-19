@@ -2,24 +2,18 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Save from './save';
 
-const mockSaveProps = {
-	attributes: {
-		items: [],
-	},
-};
-
 describe( 'Teaser Posts Grid Block Save Component', () => {
-	test( 'snapshot renders with defaults', () => {
-		const component = renderer.create( <Save { ...mockSaveProps } /> );
+	test( 'renders with defaults', () => {
+		const component = renderer.create( <Save attributes={ { items: [] } } /> );
 		expect( component.toJSON() ).toMatchSnapshot();
 	} );
 
-	test( 'snapshot renders with multiple items', () => {
+	test( 'renders with multiple items', () => {
 		const items = [
 			{ id: 13 },
 			{ id: 42 },
 		];
-		const component = renderer.create( <Save { ...mockSaveProps } items={ items }/> );
+		const component = renderer.create( <Save attributes={ { items } } /> );
 		expect( component.toJSON() ).toMatchSnapshot();
 	} );
 } );
